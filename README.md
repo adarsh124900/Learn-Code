@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QuickCode Learning Platform
 
-## Getting Started
+A platform where one can learn coding from scratch to master level through simple learning sessions that last for not more than 1 min and then after that performing small or big task according to level for practicing.
 
-First, run the development server:
+Features:
+- Choose from Python, C++, and Java.
+- Chapterwise learning with interactive AI assistant.
+- 60-second learning countdown timer for lessons.
+- Task practice area.
+- Chapterwise scorecards and learning progress bar.
+- Final course assessments and certification.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Note on GitHub Pages Deployment
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+If you are seeing this README file on your GitHub Pages website, it means your repository's GitHub Pages settings are incorrectly configured.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**To fix this:**
+1. Go to your GitHub repository on github.com.
+2. Click on **Settings**.
+3. On the left sidebar, click on **Pages**.
+4. Under **Build and deployment**, change the **Source** dropdown from "Deploy from a branch" to **"GitHub Actions"**.
+5. The GitHub Action workflow provided in `.github/workflows/deploy.yml` will automatically build and deploy your actual application!
