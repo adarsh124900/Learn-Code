@@ -1,7 +1,15 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default async function CoursePage({ params }: { params: { language: string } }) {
+export function generateStaticParams() {
+  return [
+    { language: 'python' },
+    { language: 'cpp' },
+    { language: 'java' }
+  ]
+}
+
+export default async function CoursePage({ params }: { params: Promise<{ language: string }> }) {
   const { language } = await params;
 
   const courses: Record<string, { title: string, chapters: string[] }> = {
