@@ -34,31 +34,36 @@ export default async function CoursePage({ params }: { params: Promise<{ languag
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="flex items-center gap-4 mb-8">
-        <h1 className="text-3xl font-bold text-slate-800 capitalize">{course.title} Course</h1>
-        <span className="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">
-          Master Level Path
-        </span>
-      </div>
+    <div className="max-w-4xl mx-auto py-6">
+      <header className="mb-10">
+        <div className="flex items-center gap-4 mb-2">
+          <h1 className="text-4xl font-extrabold text-slate-900 capitalize tracking-tight">{course.title} Course</h1>
+          <span className="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full border border-indigo-200">
+            Master Level Path
+          </span>
+        </div>
+        <p className="text-lg text-slate-500">
+          Complete the following 1-minute learning sessions and practice tasks to master {course.title}.
+        </p>
+      </header>
 
-      <div className="grid gap-4">
+      <div className="grid gap-5">
         {course.chapters.map((chapterTitle, index) => (
           <Link href={`/courses/${language}/chapter-${index + 1}`} key={index}>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:border-indigo-500 hover:shadow-md transition flex items-center justify-between group">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 ring-1 ring-slate-900/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between group">
               <div>
-                <span className="text-sm text-slate-500 font-semibold mb-1 block">Chapter {index + 1}</span>
-                <h2 className="text-xl font-bold text-slate-700 group-hover:text-indigo-600 transition">{chapterTitle}</h2>
+                <span className="text-xs text-slate-400 font-bold uppercase tracking-wider mb-2 block">Chapter {index + 1}</span>
+                <h2 className="text-xl font-bold text-slate-800 group-hover:text-indigo-600 transition-colors">{chapterTitle}</h2>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="text-right">
-                  <div className="text-xs text-slate-500 mb-1">Status</div>
-                  <div className="text-sm font-semibold text-slate-700">
-                    {index === 0 ? "Completed" : index === 1 ? "In Progress" : "Locked"}
+              <div className="flex items-center gap-4">
+                <div className="text-right hidden sm:block">
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-1">Status</div>
+                  <div className="text-sm font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                    Not Started
                   </div>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-indigo-100 group-hover:text-indigo-600 transition">
-                  ➔
+                <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-indigo-600 group-hover:text-white transition-colors ring-1 ring-slate-200 group-hover:ring-indigo-600 shadow-sm">
+                  <span className="text-xl leading-none">➔</span>
                 </div>
               </div>
             </div>
